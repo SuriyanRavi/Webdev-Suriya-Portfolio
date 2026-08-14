@@ -5,6 +5,7 @@ import { Mail } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/content/profile";
 import Card from "./ui/Card";
+import { Globe } from "./ui/globe";
 
 type BehindTheScenesItem = {
   title: string;
@@ -152,8 +153,8 @@ export default function DashboardSection() {
 
         {/* Card 3: Remote Location (Col Span 4) */}
         <div className="lg:col-span-4 flex justify-center">
-          <Card className="bg-bg-surface/50 w-full lg:w-[403.74px] lg:h-[254.4px] flex flex-col justify-between overflow-hidden p-6 md:p-6">
-            <div className="flex flex-col gap-0.5">
+          <Card className="bg-bg-surface/50 w-full lg:w-[403.74px] lg:h-[254.4px] flex flex-col justify-between overflow-hidden p-6 md:p-6 relative group">
+            <div className="flex flex-col gap-0.5 z-10">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
                 Remote
               </span>
@@ -165,13 +166,11 @@ export default function DashboardSection() {
               </p>
             </div>
 
-            {/* Animated High-Tech Globe Mockup */}
-            <div className="relative w-28 h-28 rounded-full border border-border-subtle/40 overflow-hidden flex items-center justify-center bg-bg-surface-raised/40 shadow-[inset_0_0_15px_rgba(198,255,61,0.02)] mx-auto mt-2">
-              <div className="absolute inset-0 border border-dashed border-accent/5 rounded-full animate-[spin_40s_linear_infinite]" />
-              <div className="absolute w-[80px] h-[80px] border border-dashed border-accent/10 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
-              <div className="absolute w-[50px] h-[50px] border border-border-subtle/40 rounded-full" />
-              <div className="absolute h-2 w-2 bg-accent rounded-full shadow-[0_0_8px_#c6ff3d] animate-ping" />
-              <div className="absolute h-2 w-2 bg-accent rounded-full shadow-[0_0_4px_#c6ff3d]" />
+            {/* Interactive 3D Globe */}
+            <div className="w-full flex-1 flex items-center justify-center pt-2 select-none">
+              <div className="w-[130px] h-[130px] flex items-center justify-center">
+                <Globe className="w-[130px] h-[130px]" />
+              </div>
             </div>
           </Card>
         </div>
