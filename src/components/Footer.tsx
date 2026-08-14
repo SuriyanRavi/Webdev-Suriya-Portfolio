@@ -180,7 +180,7 @@ export default function Footer() {
         <div className="md:col-span-4 flex flex-col gap-4 items-start text-left">
           {/* Description: 16px */}
           <p style={{ fontSize: "16px" }} className="text-text-secondary leading-relaxed font-sans">
-            I'm open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
+            I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
           </p>
           
           {/* Direct contacts */}

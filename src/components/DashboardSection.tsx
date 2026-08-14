@@ -88,7 +88,7 @@ export default function DashboardSection() {
     if (!container) return;
 
     let animationFrameId: number;
-    let speed = 0.4; // pixels per frame
+    const speed = 0.4; // pixels per frame
     let scrollLeft = container.scrollLeft;
 
     const step = () => {
@@ -127,7 +127,7 @@ export default function DashboardSection() {
           <Card className="bg-bg-surface/50 w-full lg:w-[403.74px] lg:h-[254.4px] flex flex-col justify-between items-center text-center p-6 md:p-6">
             <div className="flex flex-col gap-0.5 w-full">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
-                Let's work together
+                Let&apos;s work together
               </span>
               <h3 className="font-display text-lg sm:text-xl font-bold text-text-primary">
                 on your next project
@@ -161,7 +161,7 @@ export default function DashboardSection() {
                 India
               </h3>
               <p className="text-[11px] text-text-secondary leading-normal">
-                I'm very flexible with time zone communications.
+                I&apos;m very flexible with time zone communications.
               </p>
             </div>
 

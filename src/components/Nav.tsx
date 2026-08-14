@@ -147,7 +147,7 @@ export default function Nav() {
             const target = document.querySelector("#contact");
             if (target) target.scrollIntoView({ behavior: "smooth" });
           }}>
-            Let's Talk
+            Let&apos;s Talk
           </Button>
         </div>
 
@@ -229,7 +229,7 @@ export default function Nav() {
                     if (target) target.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  Let's Talk
+                  Let&apos;s Talk
                 </Button>
               </motion.div>
             </nav>

@@ -77,16 +77,16 @@ export default function About() {
               More About Me
             </span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary mt-2">
-              Hi there! I'm <span className="text-accent">{profile.fullName.split(" ")[0]}</span>
+              Hi there! I&apos;m <span className="text-accent">{profile.fullName.split(" ")[0]}</span>
             </h2>
           </div>
 
           <div className="flex flex-col gap-4 text-text-secondary text-sm sm:text-base leading-relaxed font-sans">
             <p>
-              I'm {profile.fullName}, a passionate frontend developer based in India, dedicated to building impactful and user-friendly web interfaces. I specialize in React, Next.js, and modern frontend technologies, focusing on writing clean, semantic, and highly interactive code.
+              I&apos;m {profile.fullName}, a passionate frontend developer based in India, dedicated to building impactful and user-friendly web interfaces. I specialize in React, Next.js, and modern frontend technologies, focusing on writing clean, semantic, and highly interactive code.
             </p>
             <p>
-              When I'm not coding, I'm brainstorming new ideas, learning emerging tech, or helping others grow. I believe in consistency, curiosity, and leveling up every day.
+              When I&apos;m not coding, I&apos;m brainstorming new ideas, learning emerging tech, or helping others grow. I believe in consistency, curiosity, and leveling up every day.
             </p>
             <p>
               I wake up each day excited to build something meaningful and work towards becoming a top developer!
@@ -131,7 +131,7 @@ export default function About() {
               I Code
             </span>
             <span className="px-5 py-2.5 rounded-full border border-border-subtle text-sm font-medium text-text-secondary select-none">
-              I Vibin'
+              I Vibin&apos;
             </span>
           </div>
 

@@ -2,14 +2,12 @@
 
 import React from "react";
 import { ArrowRight, Mail, ChevronRight } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { profile } from "@/content/profile";
 import Button from "./ui/Button";
 import { fadeInUp } from "@/lib/motion";
 
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion();
-
   const handleScrollToContact = () => {
     const target = document.querySelector("#contact");
     if (target) target.scrollIntoView({ behavior: "smooth" });
@@ -76,7 +74,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap text-lg sm:text-2xl font-semibold text-text-primary mt-2"
           >
-            <span className="font-display font-medium text-white">Hello, I'm</span>
+            <span className="font-display font-medium text-white">Hello, I&apos;m</span>
             
             <span className="bg-accent text-accent-contrast-text px-4 py-1.5 transform -skew-x-12 inline-flex items-center rounded-[2px] shadow-sm">
               <span className="transform skew-x-12 inline-block font-display font-bold">
@@ -121,7 +119,7 @@ export default function Hero() {
               onClick={handleScrollToContact}
               className="group !rounded-full !px-6 !py-3 flex items-center gap-3 text-sm font-sans"
             >
-              <span>Let's Connect</span>
+              <span>Let&apos;s Connect</span>
               <span className="bg-accent-contrast-text text-accent rounded-full p-1 group-hover:scale-110 transition-transform duration-150">
                 <ArrowRight className="h-3.5 w-3.5" />
               </span>

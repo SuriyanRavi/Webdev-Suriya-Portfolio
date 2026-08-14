@@ -114,7 +114,7 @@ export default function ContactForm() {
           <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 flex flex-col justify-between text-left shrink-0">
             <div>
               <h3 className="font-display text-2xl font-bold text-accent">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-text-secondary text-xs leading-relaxed mt-2 font-sans">
                 Ready to start your project? Reach out through any of these channels.

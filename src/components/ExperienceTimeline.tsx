@@ -122,7 +122,7 @@ export default function ExperienceTimeline() {
                         <ul className="flex flex-col gap-2 list-none pl-0">
                           {exp.highlights.map((highlight, idx) => (
                             <li key={idx} className="text-sm text-text-primary leading-relaxed flex items-start gap-2.5">
-                              <span className="text-accent font-mono text-[11px] mt-1 shrink-0">//</span>
+                              <span className="text-accent font-mono text-[11px] mt-1 shrink-0">{"//"}</span>
                               <span>{highlight}</span>
                             </li>
                           ))}
