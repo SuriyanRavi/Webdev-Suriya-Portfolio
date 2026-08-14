@@ -27,6 +27,6 @@ export const experiences: ExperienceEntry[] = [
       { label: "Performance Increase", value: "35%" },
       { label: "Components Built", value: "10+" }
     ],
-    tech: ["React", "Next.js", "javaScript", "CSS","Html","Tailwind CSS","vercel","Github"],
+    tech: ["React", "Next.js", "JavaScript", "CSS", "HTML", "Tailwind CSS", "Vercel", "GitHub"],
   }
 ];

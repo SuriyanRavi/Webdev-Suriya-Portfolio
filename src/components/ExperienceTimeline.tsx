@@ -5,7 +5,27 @@ import { ChevronDown, Calendar, MapPin } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { experiences } from "@/content/experience";
 import Card from "./ui/Card";
-import Chip from "./ui/Chip";
+
+const getTechIconPath = (techName: string): string => {
+  const lower = techName.toLowerCase();
+  if (lower.includes("next")) return "/icons/next.js.png";
+  if (lower.includes("react")) return "/icons/react.png";
+  if (lower.includes("typescript") || lower.includes("ts")) return "/icons/typescript.png";
+  if (lower.includes("javascript") || lower.includes("js")) return "/icons/javascript.png";
+  if (lower.includes("html")) return "/icons/html.png";
+  if (lower.includes("css")) return "/icons/css.png";
+  if (lower.includes("github")) return "/icons/github.png";
+  if (lower.includes("git")) return "/icons/git.png";
+  if (lower.includes("node")) return "/icons/node.png";
+  if (lower.includes("supabase")) return "/icons/supabase.png";
+  if (lower.includes("tailwind")) return "/icons/tailwindcss.png";
+  if (lower.includes("postgres") || lower.includes("sql") || lower.includes("plpgsql")) return "/icons/postgres.png";
+  if (lower.includes("vercel")) return "/icons/vercel.png";
+  if (lower.includes("npm")) return "/icons/npm.png";
+  if (lower.includes("figma")) return "/icons/figma.png";
+  
+  return `/icons/${lower}.png`;
+};
 
 export default function ExperienceTimeline() {
   const shouldReduceMotion = useReducedMotion();
@@ -122,7 +142,7 @@ export default function ExperienceTimeline() {
                         <ul className="flex flex-col gap-2 list-none pl-0">
                           {exp.highlights.map((highlight, idx) => (
                             <li key={idx} className="text-sm text-text-primary leading-relaxed flex items-start gap-2.5">
-                              <span className="text-accent font-mono text-[11px] mt-1 shrink-0">{"//"}</span>
+                              <span className="text-accent font-bold shrink-0 font-mono">+</span>
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -134,9 +154,27 @@ export default function ExperienceTimeline() {
                         <h4 className="font-mono text-[11px] uppercase tracking-wider text-accent">
                           Tools &amp; Tech Stack
                         </h4>
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="flex flex-wrap gap-2">
                           {exp.tech.map((t) => (
-                            <Chip key={t} label={t} variant="accent" />
+                            <span
+                              key={t}
+                              className="inline-flex items-center gap-1.5 rounded-full bg-bg-surface border border-border-subtle font-mono text-xs font-medium text-text-secondary px-3 py-1.5 select-none shrink-0 hover:border-accent/30 hover:text-text-primary transition-colors duration-150"
+                            >
+                              <span className="w-4 h-4 flex items-center justify-center shrink-0 overflow-hidden">
+                                <img
+                                  src={getTechIconPath(t)}
+                                  alt={t}
+                                  className="w-full h-full object-contain p-0.5"
+                                  onError={(e) => {
+                                    e.currentTarget.style.display = "none";
+                                    const fallback = e.currentTarget.parentElement?.querySelector(".fallback-dot");
+                                    if (fallback) fallback.classList.remove("hidden");
+                                  }}
+                                />
+                                <span className="fallback-dot w-1.5 h-1.5 rounded-full bg-accent shrink-0 hidden" />
+                              </span>
+                              <span>{t}</span>
+                            </span>
                           ))}
                         </div>
                       </div>

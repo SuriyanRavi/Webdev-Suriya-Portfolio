@@ -65,7 +65,7 @@ export default function CreatorSection() {
             {/* Box 1 */}
             <div className="bg-[#120d1a]/55 border border-[#3b2552]/40 p-3 sm:p-4 rounded-xl flex flex-col gap-1 text-left">
               <span className="font-display text-base sm:text-lg md:text-xl font-bold text-white">
-                1.7k+
+                2.1k+
               </span>
               <span className="text-[9px] sm:text-[10px] text-text-secondary font-medium leading-tight font-sans">
                 Instagram followers
