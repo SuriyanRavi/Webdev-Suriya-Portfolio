@@ -14,11 +14,37 @@
   --text-primary: #FFFFFF;
   --text-secondary: #A1A1AA;
   --text-tertiary: #6B6B72;
-  --accent: oklch(0.97 0 0);
+
+  /* Secondary Green Color & Gradient */
+  --color-secondary-green: rgb(170, 250, 42);
+  --gradient-secondary-green: linear-gradient(to left, rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42));
+
+  /* Map accents to secondary green */
+  --accent: var(--color-secondary-green);
   --accent-contrast-text: #0A0A0C;
-  --accent-muted: rgba(198, 255, 61, 0.12);
-  --success: #3DDC84;
+  --accent-muted: rgba(56, 209, 0, 0.12);
+  --success: #38d100;
   --danger: #FF5C5C;
+
+  /* shadcn default mappings for root (dark by default) */
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: #FFFFFF;
+  --primary-foreground: #0A0A0C;
+  --secondary: var(--color-secondary-green);
+  --secondary-foreground: #FFFFFF;
+  --muted: var(--bg-surface-raised);
+  --muted-foreground: var(--text-secondary);
+  --accent-foreground: #0A0A0C;
+  --destructive: #FF5C5C;
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--color-secondary-green);
+  --radius: 0.625rem;
 
   /* Fonts */
   --font-display-family: "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -48,37 +74,6 @@
   --motion-base: 200ms;
   --motion-slow: 400ms;
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 /* Light mode overrides */
@@ -90,11 +85,32 @@ html.light {
   --text-primary: #111113;
   --text-secondary: #5B5B62;
   --text-tertiary: #8A8A90;
-  --accent: #5B8A00;
+
+  --color-secondary-green: rgb(56, 209, 0);
+  --accent: var(--color-secondary-green);
   --accent-contrast-text: #FFFFFF;
-  --accent-muted: rgba(91, 138, 0, 0.10);
-  --success: #1F8F4E;
+  --accent-muted: rgba(56, 209, 0, 0.10);
+  --success: #38d100;
   --danger: #D93636;
+
+  /* shadcn overrides for light mode */
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: #111113;
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--color-secondary-green);
+  --secondary-foreground: #FFFFFF;
+  --muted: var(--bg-surface-raised);
+  --muted-foreground: var(--text-secondary);
+  --accent-foreground: #FFFFFF;
+  --destructive: #D93636;
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--color-secondary-green);
 
   --elevation-card: 0 1px 2px rgba(0,0,0,0.05);
   --elevation-card-hover: 0 12px 24px rgba(0,0,0,0.08);
@@ -131,6 +147,11 @@ html.light {
 
   --animate-marquee: marquee 30s linear infinite;
   --animate-marquee-reverse: marquee-reverse 30s linear infinite;
+
+  /* Custom secondary green and primary white mappings */
+  --color-secondary-green: var(--color-secondary-green);
+  --color-primary-white: #FFFFFF;
+  --bg-gradient-secondary-green: var(--gradient-secondary-green);
 
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -235,37 +256,32 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: var(--bg-canvas);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: #FFFFFF;
+  --primary-foreground: #0A0A0C;
+  --secondary: var(--color-secondary-green);
+  --secondary-foreground: #FFFFFF;
+  --muted: var(--bg-surface-raised);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--color-secondary-green);
+  --accent-foreground: #0A0A0C;
+  --destructive: #FF5C5C;
+  --border: var(--border-subtle);
+  --input: var(--border-subtle);
+  --ring: var(--color-secondary-green);
+  --sidebar: var(--bg-surface);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--color-secondary-green);
+  --sidebar-primary-foreground: var(--text-primary);
+  --sidebar-accent: var(--bg-surface-raised);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--color-secondary-green);
 }
 
 @layer base {

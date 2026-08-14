@@ -17,6 +17,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Suriyan R | Frontend Developer",
   description: "Personal portfolio website of Suriyan R. Turning thoughts into beautiful web stories.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
