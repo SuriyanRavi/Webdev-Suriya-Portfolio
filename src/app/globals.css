@@ -16,7 +16,7 @@
   --text-tertiary: #6B6B72;
 
   /* Secondary Green Color & Gradient */
-  --color-secondary-green: rgb(170, 250, 42);
+  --color-secondary-green: rgb(194, 253, 65);
   --gradient-secondary-green: linear-gradient(to left, rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42), rgb(170, 250, 42));
 
   /* Map accents to secondary green */
