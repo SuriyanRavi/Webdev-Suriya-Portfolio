@@ -107,8 +107,11 @@ export default function ContactForm() {
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start justify-center gap-8 sm:gap-12 lg:gap-12 w-full">
         
         {/* Left Column: Let's Connect (Outer Card Wrapper) */}
-        <div className="w-full lg:w-[340px] flex justify-center shrink-0">
-          <Card className="w-full bg-[#131316]/50 border border-border-subtle p-5 sm:p-6 flex flex-col justify-between gap-6 text-left shrink-0">
+        <div
+          style={{ width: "329.33px", height: "524.8px" }}
+          className="max-w-full flex justify-center shrink-0"
+        >
+          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 flex flex-col justify-between text-left shrink-0">
             <div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-accent">
                 Let&apos;s Connect
@@ -201,26 +204,29 @@ export default function ContactForm() {
         </div>
 
         {/* Right Column: Send a Message Form */}
-        <div className="w-full max-w-[660px] flex-1 shrink-0">
-          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-5 sm:p-8">
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-accent text-left mb-6">
+        <div
+          style={{ width: "648.68px", height: "524.8px" }}
+          className="max-w-full shrink-0"
+        >
+          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 sm:p-7 flex flex-col justify-between">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-accent text-left mb-2">
               Send a Message
             </h3>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-3.5 flex-1 justify-between">
               {/* Status banner */}
               <div
                 aria-live="polite"
                 className={`role-status sr-only ${submitStatus !== "idle" ? "not-sr-only" : ""}`}
               >
                 {submitStatus === "success" && (
-                  <div className="bg-transparent border border-border-subtle/50 text-white text-xs font-sans p-4 rounded-md flex items-center gap-2 mb-2">
+                  <div className="bg-transparent border border-border-subtle/50 text-white text-xs font-sans p-3 rounded-md flex items-center gap-2 mb-1">
                     <CheckCircle2 className="h-4 w-4 shrink-0" style={{ color: "var(--success)" }} />
                     <span>{statusMessage}</span>
                   </div>
                 )}
                 {submitStatus === "error" && (
-                  <div className="bg-transparent border border-border-subtle/50 text-white text-xs font-sans p-4 rounded-md flex items-center gap-2 mb-2">
+                  <div className="bg-transparent border border-border-subtle/50 text-white text-xs font-sans p-3 rounded-md flex items-center gap-2 mb-1">
                     <span className="font-sans font-bold shrink-0" style={{ color: "var(--danger)" }}>[!]</span>
                     <span>{statusMessage}</span>
                   </div>
@@ -228,7 +234,7 @@ export default function ContactForm() {
               </div>
 
               {/* Name */}
-              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 items-start text-left">
                 <label htmlFor="name" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Name
                 </label>
@@ -239,7 +245,7 @@ export default function ContactForm() {
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-2.5 outline-none transition-colors duration-150 font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -247,7 +253,7 @@ export default function ContactForm() {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 items-start text-left">
                 <label htmlFor="email" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Email
                 </label>
@@ -258,7 +264,7 @@ export default function ContactForm() {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-2.5 outline-none transition-colors duration-150 font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -266,18 +272,18 @@ export default function ContactForm() {
               </div>
 
               {/* Message */}
-              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 items-start text-left">
                 <label htmlFor="message" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={4}
                   placeholder="Tell me about your project..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 resize-none font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-2.5 outline-none transition-colors duration-150 resize-none font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -288,7 +294,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 py-3.5 min-h-[48px] bg-accent hover:brightness-110 active:scale-[0.99] text-accent-contrast-text font-bold rounded-lg text-sm transition-all duration-150 select-none shadow-md cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:opacity-80"
+                className="w-full mt-1 py-3 min-h-[46px] bg-accent hover:brightness-110 active:scale-[0.99] text-accent-contrast-text font-bold rounded-lg text-sm transition-all duration-150 select-none shadow-md cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:opacity-80"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
