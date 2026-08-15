@@ -25,19 +25,19 @@ export default function Footer() {
       
       {/* Repeating Marquee (Outlined/low-opacity name & role) */}
       <div
-        className="w-full border-b border-border-subtle py-6 select-none bg-bg-surface/30 overflow-hidden relative"
+        className="w-full border-b border-border-subtle py-4 sm:py-6 select-none bg-bg-surface/30 overflow-hidden relative"
         aria-hidden="true"
       >
         <div className="flex w-[200%] whitespace-nowrap animate-marquee">
           {/* Slide 1 */}
-          <div className="flex justify-around min-w-full text-[10vw] font-display font-bold uppercase tracking-tighter text-text-primary/5">
+          <div className="flex justify-around min-w-full text-[12vw] sm:text-[10vw] font-display font-bold uppercase tracking-tighter text-text-primary/5">
             <span>{profile.fullName}</span>
             <span>&bull;</span>
             <span>{profile.tagline}</span>
             <span>&bull;</span>
           </div>
           {/* Slide 2 */}
-          <div className="flex justify-around min-w-full text-[10vw] font-display font-bold uppercase tracking-tighter text-text-primary/5">
+          <div className="flex justify-around min-w-full text-[12vw] sm:text-[10vw] font-display font-bold uppercase tracking-tighter text-text-primary/5">
             <span>{profile.fullName}</span>
             <span>&bull;</span>
             <span>{profile.tagline}</span>
@@ -47,26 +47,24 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content Directory */}
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10">
         
         {/* Col 1: Identity & Trustpilot */}
-        <div className="md:col-span-4 flex flex-col gap-4 items-start text-left">
-          {/* Name: 24px */}
-          <span style={{ fontSize: "24px" }} className="font-display font-bold tracking-tight text-white leading-tight">
+        <div className="md:col-span-4 flex flex-col gap-3 sm:gap-4 items-start text-left">
+          <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
             {profile.fullName}
           </span>
-          {/* Description: 16px */}
-          <p style={{ fontSize: "16px" }} className="text-text-secondary max-w-[320px] font-sans leading-relaxed">
+          <p className="text-text-secondary text-xs sm:text-sm max-w-[320px] font-sans leading-relaxed">
             Building web solutions where clean design and powerful functionality work in harmony.
           </p>
           
           {/* Social Row */}
-          <div className="flex items-center gap-4 mt-2">
+          <div className="flex items-center gap-2 sm:gap-3 mt-1">
             <a
               href={profile.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="LinkedIn"
             >
               <LinkedinIcon className="h-5 w-5" />
@@ -75,7 +73,7 @@ export default function Footer() {
               href={profile.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="GitHub"
             >
               <GithubIcon className="h-5 w-5" />
@@ -84,7 +82,7 @@ export default function Footer() {
               href="https://wa.me/917604889657"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -94,12 +92,12 @@ export default function Footer() {
           </div>
 
           {/* Trustpilot Badge */}
-          <div className="mt-6 flex self-start">
+          <div className="mt-3 sm:mt-4 flex self-start">
             <a
               href="https://www.trustpilot.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3.5 py-1.5 bg-white border border-[#00b67a] rounded-[4px] text-black font-sans font-bold text-[11px] transition-colors duration-150 select-none shadow-sm"
+              className="flex items-center gap-2 px-3.5 py-1.5 min-h-[40px] bg-white border border-[#00b67a] rounded-[4px] text-black font-sans font-bold text-[11px] transition-colors duration-150 select-none shadow-sm"
             >
               <span className="text-[#191919]">Review us on</span>
               <span className="flex items-center gap-0.5 text-[#00b67a]">
@@ -113,18 +111,16 @@ export default function Footer() {
         </div>
 
         {/* Col 2: The Website Sitemap */}
-        <div className="md:col-span-2 flex flex-col gap-4 items-start text-left">
-          {/* Header: 18px */}
-          <h4 style={{ fontSize: "18px" }} className="font-display font-bold text-white uppercase tracking-wider">
+        <div className="md:col-span-2 flex flex-col gap-3 sm:gap-4 items-start text-left">
+          <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
             The Website
           </h4>
-          {/* Points: 16px */}
-          <ul style={{ fontSize: "16px" }} className="flex flex-col gap-2.5 font-sans">
+          <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
             <li>
               <a
                 href="#home"
                 onClick={(e) => scrollToSection(e, "#home")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Home
               </a>
@@ -133,7 +129,7 @@ export default function Footer() {
               <a
                 href="#work"
                 onClick={(e) => scrollToSection(e, "#work")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Projects
               </a>
@@ -142,7 +138,7 @@ export default function Footer() {
               <a
                 href="#about"
                 onClick={(e) => scrollToSection(e, "#about")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 About
               </a>
@@ -151,7 +147,7 @@ export default function Footer() {
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, "#contact")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Contact
               </a>
@@ -160,19 +156,17 @@ export default function Footer() {
         </div>
 
         {/* Col 3: Projects list */}
-        <div className="md:col-span-2 flex flex-col gap-4 items-start text-left">
-          {/* Header: 18px */}
-          <h4 style={{ fontSize: "18px" }} className="font-display font-bold text-white uppercase tracking-wider">
+        <div className="md:col-span-2 flex flex-col gap-3 sm:gap-4 items-start text-left">
+          <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
             Projects
           </h4>
-          {/* Points: 16px */}
-          <ul style={{ fontSize: "16px" }} className="flex flex-col gap-2.5 font-sans">
+          <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
             <li>
               <a
                 href="https://personal-tracker-app-delta.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Personal-Tracker-App
               </a>
@@ -182,7 +176,7 @@ export default function Footer() {
                 href="https://aznav-technologies-software.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Aznav Technologies
               </a>
@@ -192,7 +186,7 @@ export default function Footer() {
                 href="https://shanthi-contruction.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150"
+                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
               >
                 Shanthi Construction
               </a>
@@ -201,28 +195,23 @@ export default function Footer() {
         </div>
 
         {/* Col 4: Bio / Call to action */}
-        <div className="md:col-span-4 flex flex-col gap-4 items-start text-left">
-          {/* Description: 16px */}
-          <p style={{ fontSize: "16px" }} className="text-text-secondary leading-relaxed font-sans">
+        <div className="md:col-span-4 flex flex-col gap-3 sm:gap-4 items-start text-left">
+          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed font-sans">
             I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
           </p>
           
           {/* Direct contacts */}
-          <div className="flex flex-col gap-2 mt-2 w-full">
-            {/* Email: 16px */}
+          <div className="flex flex-col gap-2 mt-1 w-full">
             <a
               href={`mailto:${profile.email}`}
-              style={{ fontSize: "16px" }}
-              className="inline-flex items-center gap-2 text-[#00a8ff] hover:text-accent transition-colors duration-150 font-mono"
+              className="inline-flex items-center gap-2 text-[#00a8ff] hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
             >
               <Mail className="h-4 w-4 shrink-0" />
-              <span>{profile.email}</span>
+              <span className="truncate">{profile.email}</span>
             </a>
-            {/* Phone: 16px */}
             <a
               href="tel:+917604889657"
-              style={{ fontSize: "16px" }}
-              className="inline-flex items-center gap-2 text-text-secondary hover:text-accent transition-colors duration-150 font-mono"
+              className="inline-flex items-center gap-2 text-text-secondary hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
             >
               <Phone className="h-4 w-4 shrink-0" />
               <span>+91 7604889657</span>
@@ -233,19 +222,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom Horizontal Bar */}
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Copyright */}
-        <span className="text-xs text-text-secondary font-sans text-left">
+        <span className="text-xs text-text-secondary font-sans text-center sm:text-left">
           Copyright &copy; {currentYear} {profile.fullName}. All rights reserved.
         </span>
 
         {/* Back to Top */}
         <button
           onClick={handleBackToTop}
-          className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-secondary hover:text-accent focus-visible:outline-2 focus-visible:outline-accent outline-offset-4 cursor-pointer"
+          className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-secondary hover:text-accent focus-visible:outline-2 focus-visible:outline-accent outline-offset-4 cursor-pointer py-2 px-3 min-h-[44px]"
           aria-label="Scroll back to top"
         >
-          Back to Top <ArrowUp className="h-3 w-3" />
+          Back to Top <ArrowUp className="h-3.5 w-3.5" />
         </button>
       </div>
 

@@ -14,7 +14,7 @@ export default function Input({ label, error, id, className = "", ...props }: In
       </label>
       <input
         id={id}
-        className={`bg-bg-surface border border-border-subtle rounded-md px-4 py-3.5 text-text-primary text-sm font-sans focus:border-accent focus:ring-3 focus:ring-accent-muted outline-none transition-all duration-150 placeholder:text-text-tertiary/60 ${
+        className={`bg-bg-surface border border-border-subtle rounded-md px-4 py-3.5 text-text-primary text-base md:text-sm font-sans focus:border-accent focus:ring-3 focus:ring-accent-muted outline-none transition-all duration-150 placeholder:text-text-tertiary/60 ${
           error ? "border-danger focus:border-danger focus:ring-danger/20" : ""
         } ${className}`}
         aria-describedby={error ? `${id}-error` : undefined}

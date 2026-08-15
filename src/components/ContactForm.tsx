@@ -101,19 +101,16 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-[1280px] mx-auto px-6 md:px-12 py-24"
+      className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24"
     >
       {/* 2-Column Responsive Layout */}
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-12 lg:gap-16 w-full">
+      <div className="flex flex-col lg:flex-row items-stretch lg:items-start justify-center gap-8 sm:gap-12 lg:gap-12 w-full">
         
         {/* Left Column: Let's Connect (Outer Card Wrapper) */}
-        <div
-          style={{ width: "329.33px", height: "524.8px" }}
-          className="flex justify-center shrink-0"
-        >
-          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 flex flex-col justify-between text-left shrink-0">
+        <div className="w-full lg:w-[340px] flex justify-center shrink-0">
+          <Card className="w-full bg-[#131316]/50 border border-border-subtle p-5 sm:p-6 flex flex-col justify-between gap-6 text-left shrink-0">
             <div>
-              <h3 className="font-display text-2xl font-bold text-accent">
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-accent">
                 Let&apos;s Connect
               </h3>
               <p className="text-text-secondary text-xs leading-relaxed mt-2 font-sans">
@@ -126,8 +123,7 @@ export default function ContactForm() {
               href="https://wa.me/917604889657"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ width: "279.73px", height: "59.99px" }}
-              className="flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0"
+              className="w-full min-h-[56px] flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 py-2.5 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0"
             >
               <div className="w-9 h-9 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-500 shrink-0">
                 <svg className="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24">
@@ -151,8 +147,7 @@ export default function ContactForm() {
                 href="https://www.instagram.com/flim_myself?igsh=cmNidmFiMDJuY3Jp"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ width: "279.73px", height: "59.99px" }}
-                className="flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0 mb-2"
+                className="w-full min-h-[56px] flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 py-2.5 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0 mb-2"
               >
                 <div className="w-9 h-9 rounded-lg bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary shrink-0">
                   <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -172,8 +167,7 @@ export default function ContactForm() {
                 href={profile.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ width: "279.73px", height: "59.99px" }}
-                className="flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0 mb-2"
+                className="w-full min-h-[56px] flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 py-2.5 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0 mb-2"
               >
                 <div className="w-9 h-9 rounded-lg bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary shrink-0">
                   <LinkedinIcon className="w-4.5 h-4.5" />
@@ -189,8 +183,7 @@ export default function ContactForm() {
                 href="https://youtube.com/@flim_myself"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ width: "279.73px", height: "59.99px" }}
-                className="flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0"
+                className="w-full min-h-[56px] flex items-center gap-3.5 bg-bg-surface/50 border border-border-subtle px-4 py-2.5 rounded-xl hover:border-accent/30 transition-all duration-200 cursor-pointer shrink-0"
               >
                 <div className="w-9 h-9 rounded-lg bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary shrink-0">
                   <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -208,16 +201,13 @@ export default function ContactForm() {
         </div>
 
         {/* Right Column: Send a Message Form */}
-        <div
-          style={{ width: "658.68px" }}
-          className="max-w-full shrink-0"
-        >
-          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 sm:p-8">
-            <h3 className="font-display text-2xl font-bold text-accent text-left mb-6">
+        <div className="w-full max-w-[660px] flex-1 shrink-0">
+          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-5 sm:p-8">
+            <h3 className="font-display text-xl sm:text-2xl font-bold text-accent text-left mb-6">
               Send a Message
             </h3>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-5">
               {/* Status banner */}
               <div
                 aria-live="polite"
@@ -238,7 +228,7 @@ export default function ContactForm() {
               </div>
 
               {/* Name */}
-              <div className="flex flex-col gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
                 <label htmlFor="name" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Name
                 </label>
@@ -249,7 +239,7 @@ export default function ContactForm() {
                   placeholder="John Doe"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -257,7 +247,7 @@ export default function ContactForm() {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
                 <label htmlFor="email" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Email
                 </label>
@@ -268,7 +258,7 @@ export default function ContactForm() {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -276,7 +266,7 @@ export default function ContactForm() {
               </div>
 
               {/* Message */}
-              <div className="flex flex-col gap-2 items-start text-left">
+              <div className="flex flex-col gap-1.5 sm:gap-2 items-start text-left">
                 <label htmlFor="message" className="text-xs font-mono font-semibold uppercase text-text-secondary tracking-wider">
                   Message
                 </label>
@@ -287,7 +277,7 @@ export default function ContactForm() {
                   placeholder="Tell me about your project..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 resize-none font-sans"
+                  className="w-full bg-[#0a0a0c] border border-border-subtle hover:border-text-tertiary focus:border-accent text-white placeholder-text-tertiary text-base md:text-sm rounded-lg px-4 py-3 outline-none transition-colors duration-150 resize-none font-sans"
                   disabled={isSubmitting}
                   required
                 />
@@ -298,7 +288,7 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 py-3.5 bg-accent hover:brightness-110 active:scale-[0.99] text-accent-contrast-text font-bold rounded-lg text-sm transition-all duration-150 select-none shadow-md cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:opacity-80"
+                className="w-full mt-2 py-3.5 min-h-[48px] bg-accent hover:brightness-110 active:scale-[0.99] text-accent-contrast-text font-bold rounded-lg text-sm transition-all duration-150 select-none shadow-md cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent disabled:opacity-80"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>

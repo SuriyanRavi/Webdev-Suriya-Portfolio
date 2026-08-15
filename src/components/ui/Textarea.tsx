@@ -15,7 +15,7 @@ export default function Textarea({ label, error, id, className = "", ...props }:
       <textarea
         id={id}
         rows={4}
-        className={`bg-bg-surface border border-border-subtle rounded-md px-4 py-3.5 text-text-primary text-sm font-sans focus:border-accent focus:ring-3 focus:ring-accent-muted outline-none transition-all duration-150 placeholder:text-text-tertiary/60 resize-y ${
+        className={`bg-bg-surface border border-border-subtle rounded-md px-4 py-3.5 text-text-primary text-base md:text-sm font-sans focus:border-accent focus:ring-3 focus:ring-accent-muted outline-none transition-all duration-150 placeholder:text-text-tertiary/60 resize-y ${
           error ? "border-danger focus:border-danger focus:ring-danger/20" : ""
         } ${className}`}
         aria-describedby={error ? `${id}-error` : undefined}

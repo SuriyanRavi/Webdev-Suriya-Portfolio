@@ -43,18 +43,18 @@ const getTechIconPath = (techName: string): string => {
 
 export default function About() {
   return (
-    <section id="about" className="max-w-[1280px] mx-auto px-6 md:px-12 py-24 border-b border-border-subtle">
+    <section id="about" className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24 border-b border-border-subtle">
       
       {/* Row 1: About Me layout (Avatar on Left, Bio + Socials on Right) */}
-      <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 w-full">
+      <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-12 lg:gap-20 w-full">
         
         {/* Left Column: Avatar Photo Frame */}
-        <div className="w-full md:w-[350px] lg:w-[400px] shrink-0">
-          <div className="p-1.5 bg-gradient-to-tr from-accent to-accent/30 rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
+        <div className="w-full max-w-[280px] sm:max-w-[320px] md:w-[350px] lg:w-[400px] shrink-0">
+          <div className="p-1.5 bg-gradient-to-tr from-accent to-accent/30 rounded-[28px] sm:rounded-[32px] overflow-hidden aspect-[4/5] shadow-lg">
             <img
               src={profile.avatarUrl}
               alt={profile.fullName}
-              className="w-full h-full object-cover rounded-[28px] select-none"
+              className="w-full h-full object-cover rounded-[24px] sm:rounded-[28px] select-none"
               onError={(e) => {
                 // If avatar doesn't exist, display a premium monogram placeholder
                 e.currentTarget.style.display = "none";
@@ -62,24 +62,24 @@ export default function About() {
                 if (fallback) fallback.classList.remove("hidden");
               }}
             />
-            <div className="avatar-fallback w-full h-full rounded-[28px] bg-bg-surface flex items-center justify-center font-display text-6xl font-bold text-accent hidden">
+            <div className="avatar-fallback w-full h-full rounded-[24px] sm:rounded-[28px] bg-bg-surface flex items-center justify-center font-display text-5xl sm:text-6xl font-bold text-accent hidden">
               {profile.shortName}
             </div>
           </div>
         </div>
 
         {/* Right Column: Bio Paragraphs + Socials + status badges */}
-        <div className="flex-grow flex flex-col gap-6 text-left">
+        <div className="flex-grow flex flex-col gap-5 sm:gap-6 text-left">
           <div>
             <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
               More About Me
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary mt-2">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary mt-2">
               Hi there! I&apos;m <span className="text-accent">{profile.fullName.split(" ")[0]}</span>
             </h2>
           </div>
 
-          <div className="flex flex-col gap-4 text-text-secondary text-sm sm:text-base leading-relaxed font-sans">
+          <div className="flex flex-col gap-3.5 sm:gap-4 text-text-secondary text-sm sm:text-base leading-relaxed font-sans">
             <p>
               I&apos;m {profile.fullName}, a passionate frontend developer based in India, dedicated to building impactful and user-friendly web interfaces. I specialize in React, Next.js, and modern frontend technologies, focusing on writing clean, semantic, and highly interactive code.
             </p>
@@ -92,12 +92,12 @@ export default function About() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-5 mt-2">
+          <div className="flex items-center gap-3 sm:gap-4 mt-1">
             <a
               href={profile.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon className="h-5 w-5" />
@@ -106,14 +106,14 @@ export default function About() {
               href={profile.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="GitHub Profile"
             >
               <GithubIcon className="h-5 w-5" />
             </a>
             <a
               href={`mailto:${profile.email}`}
-              className="text-text-secondary hover:text-accent transition-colors duration-150"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
               aria-label="Email Contact"
             >
               <Mail className="h-5 w-5" />
@@ -121,14 +121,14 @@ export default function About() {
           </div>
 
           {/* Status Badges */}
-          <div className="flex flex-wrap gap-3 mt-4">
-            <span className="px-5 py-2.5 rounded-full border border-border-subtle text-sm font-medium text-text-secondary select-none">
+          <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-2 sm:mt-4">
+            <span className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-border-subtle text-xs sm:text-sm font-medium text-text-secondary select-none">
               I Lift
             </span>
-            <span className="px-5 py-2.5 rounded-full border border-accent bg-accent/10 text-accent text-sm font-medium select-none">
+            <span className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-accent bg-accent/10 text-accent text-xs sm:text-sm font-medium select-none">
               I Code
             </span>
-            <span className="px-5 py-2.5 rounded-full border border-border-subtle text-sm font-medium text-text-secondary select-none">
+            <span className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-border-subtle text-xs sm:text-sm font-medium text-text-secondary select-none">
               I Vibin&apos;
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function About() {
       </div>
 
       {/* Row 2: Skills & Technologies Tech Stack (Displayed below) */}
-      <div className="mt-24 pt-16 border-t border-border-subtle/30 w-full text-center">
+      <div className="mt-16 sm:mt-24 pt-12 sm:pt-16 border-t border-border-subtle/30 w-full text-center">
         <div>
           <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent block">
             Skills &amp; Technologies
@@ -149,16 +149,15 @@ export default function About() {
         </div>
 
         {/* Tech Stack Badge List */}
-        <div className="flex flex-wrap gap-3 mt-8 justify-center">
+        <div className="flex flex-wrap gap-2.5 sm:gap-3 mt-6 sm:mt-8 justify-center">
           {skills.map((skill) => (
             <span
               key={skill}
-              style={{ width: "120px", height: "36px", fontSize: "14px", padding: "6px 12px" }}
-              className="inline-flex items-center gap-2 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-white select-none justify-center shrink-0 hover:border-accent/30 transition-colors duration-150"
+              className="inline-flex items-center gap-2 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-white select-none justify-center shrink-0 hover:border-accent/30 transition-colors duration-150 px-3.5 py-1.5 min-w-[105px] sm:min-w-[120px] h-9 text-xs sm:text-sm"
             >
               {/* Icon / Fallback Dot container without outer circle background */}
               <span 
-                style={{ width: "20px", height: "20px" }}
+                style={{ width: "18px", height: "18px" }}
                 className="flex items-center justify-center shrink-0 overflow-hidden"
               >
                 <img

@@ -73,13 +73,13 @@ export default function ProjectGrid() {
   };
 
   return (
-    <section id="work" className="max-w-[1280px] mx-auto px-6 md:px-12 py-24 border-b border-border-subtle">
+    <section id="work" className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24 border-b border-border-subtle">
       {/* Eyebrow and Header */}
-      <div className="mb-12 md:mb-16">
+      <div className="mb-8 sm:mb-12 md:mb-16">
         <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
           Code Meets Creativity
         </span>
-        <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-text-primary mt-2">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-text-primary mt-2">
           Crafted Projects
         </h2>
       </div>
@@ -98,8 +98,7 @@ export default function ProjectGrid() {
               {projects.map((project, idx) => (
                 <div
                   key={project.slug}
-                  style={{ width: "100%", height: "564px" }}
-                  className={`py-8 px-6 flex flex-col justify-between overflow-hidden relative shadow-md transition-all duration-300 border rounded-2xl ${
+                  className={`w-full h-[564px] py-8 px-6 flex flex-col justify-between overflow-hidden relative shadow-md transition-all duration-300 border rounded-2xl ${
                     idx === activeIndex
                       ? "opacity-100 scale-100 border-border-subtle bg-bg-surface/40"
                       : "opacity-20 scale-95 border-transparent bg-bg-surface/10"
@@ -114,7 +113,7 @@ export default function ProjectGrid() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                        className="w-11 h-11 rounded-full bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-accent"
                         aria-label={`Visit live site for ${project.title}`}
                       >
                         <ArrowUpRight className="h-5 w-5" />
@@ -166,8 +165,7 @@ export default function ProjectGrid() {
                     {projects[activeIndex].highlights.map((highlight, idx) => (
                       <li
                         key={idx}
-                        style={{ fontSize: "16px" }}
-                        className="text-text-primary leading-relaxed flex items-start gap-2.5"
+                        className="text-text-primary text-sm sm:text-base leading-relaxed flex items-start gap-2.5"
                       >
                         <span className="text-accent font-bold shrink-0 font-mono">+</span>
                         <span>{highlight}</span>
@@ -176,16 +174,15 @@ export default function ProjectGrid() {
                   </ul>
                 </div>
 
-                {/* Tech Stack Pills at the Bottom (with placeholder logos) */}
+                {/* Tech Stack Pills at the Bottom */}
                 <div className="flex flex-wrap gap-2 mt-8">
                   {projects[activeIndex].stack.map((tech) => (
                     <span
                       key={tech}
-                      style={{ width: "96.61px", height: "29.6px", fontSize: "14px", padding: "4px 8px" }}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-text-secondary select-none justify-center shrink-0"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-text-secondary select-none justify-center shrink-0 px-3 py-1 text-xs sm:text-sm min-w-[90px] h-8"
                     >
                       <span 
-                        style={{ width: "20px", height: "20px" }}
+                        style={{ width: "18px", height: "18px" }}
                         className="flex items-center justify-center shrink-0 overflow-hidden"
                       >
                         <img
@@ -212,16 +209,16 @@ export default function ProjectGrid() {
       </div>
 
       {/* 2. Mobile/Tablet: Standard Stack Layout for Responsiveness */}
-      <div className="flex flex-col gap-12 w-full lg:hidden">
+      <div className="flex flex-col gap-8 sm:gap-12 w-full lg:hidden">
         {projects.map((project) => (
           <div
             key={project.slug}
-            className="flex flex-col items-center gap-8 w-full py-12 border-b border-border-subtle/30 last:border-b-0"
+            className="flex flex-col items-center gap-6 sm:gap-8 w-full py-8 sm:py-12 border-b border-border-subtle/30 last:border-b-0"
           >
             {/* Thumbnail Card */}
-            <div className="w-full bg-bg-surface/40 border border-border-subtle rounded-2xl py-8 px-6 flex flex-col justify-between overflow-hidden shadow-md">
+            <div className="w-full bg-bg-surface/40 border border-border-subtle rounded-2xl py-6 sm:py-8 px-4 sm:px-6 flex flex-col justify-between overflow-hidden shadow-md">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-display text-lg font-bold text-text-primary">
+                <h4 className="font-display text-base sm:text-lg font-bold text-text-primary">
                   {project.title}
                 </h4>
                 {project.liveUrl && (
@@ -229,7 +226,8 @@ export default function ProjectGrid() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary"
+                    className="w-11 h-11 min-h-[44px] min-w-[44px] rounded-full bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent/40 transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-label={`Visit live site for ${project.title}`}
                   >
                     <ArrowUpRight className="h-5 w-5" />
                   </a>
@@ -248,23 +246,22 @@ export default function ProjectGrid() {
             </div>
 
             {/* Info Card */}
-            <div className="w-full p-6 flex flex-col justify-between">
+            <div className="w-full p-4 sm:p-6 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3">
                   <span className="w-8 h-[2px] bg-accent rounded-full shrink-0" />
-                  <h3 className="font-display text-2xl font-bold text-text-primary">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-text-primary">
                     {project.title}
                   </h3>
                 </div>
-                <p className="text-sm text-text-secondary leading-relaxed mt-4">
+                <p className="text-xs sm:text-sm text-text-secondary leading-relaxed mt-3 sm:mt-4">
                   {project.description}
                 </p>
-                <ul className="flex flex-col gap-3 mt-6">
+                <ul className="flex flex-col gap-2.5 sm:gap-3 mt-4 sm:mt-6">
                   {project.highlights.map((h, idx) => (
                     <li
                       key={idx}
-                      style={{ fontSize: "16px" }}
-                      className="text-text-primary flex items-start gap-2.5"
+                      className="text-text-primary text-xs sm:text-sm md:text-base leading-relaxed flex items-start gap-2.5"
                     >
                       <span className="text-accent font-bold shrink-0 font-mono">+</span>
                       <span>{h}</span>
@@ -272,15 +269,14 @@ export default function ProjectGrid() {
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-wrap gap-2 mt-8">
+              <div className="flex flex-wrap gap-2 mt-6 sm:mt-8">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    style={{ width: "96.61px", height: "29.6px", fontSize: "14px", padding: "4px 8px" }}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-text-secondary select-none justify-center shrink-0"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-bg-surface border border-border-subtle font-mono font-medium text-text-secondary select-none justify-center shrink-0 px-3 py-1 text-xs sm:text-sm min-w-[80px] h-7 sm:h-8"
                   >
                     <span 
-                      style={{ width: "20px", height: "20px" }}
+                      style={{ width: "16px", height: "16px" }}
                       className="flex items-center justify-center shrink-0 overflow-hidden"
                     >
                       <img
@@ -305,8 +301,8 @@ export default function ProjectGrid() {
       </div>
 
       {/* Projects under updation status indicator label */}
-      <div className="mt-16 flex justify-center">
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-bg-surface/30 border border-border-subtle/80 rounded-full shadow-sm text-text-secondary text-sm font-sans tracking-wide">
+      <div className="mt-12 sm:mt-16 flex justify-center px-4">
+        <div className="inline-flex items-center text-center gap-2 px-4 sm:px-5 py-2.5 bg-bg-surface/30 border border-border-subtle/80 rounded-full shadow-sm text-text-secondary text-xs sm:text-sm font-sans tracking-wide">
           <span>Projects are under updation</span>
         </div>
       </div>

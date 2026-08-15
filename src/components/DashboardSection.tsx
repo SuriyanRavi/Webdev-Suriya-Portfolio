@@ -119,13 +119,13 @@ export default function DashboardSection() {
   }, [shouldReduceMotion]);
 
   return (
-    <section className="max-w-[1280px] mx-auto px-6 md:px-12 py-16">
+    <section className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24">
       {/* Bento Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6 w-full justify-center">
         
         {/* Card 2: Let's Work Together (Col Span 4) */}
-        <div className="lg:col-span-4 flex justify-center">
-          <Card className="bg-bg-surface/50 w-full lg:w-[403.74px] lg:h-[254.4px] flex flex-col justify-between items-center text-center p-6 md:p-6">
+        <div className="col-span-1 md:col-span-1 lg:col-span-4 flex justify-center">
+          <Card className="bg-bg-surface/50 w-full h-full min-h-[240px] sm:min-h-[254px] flex flex-col justify-between items-center text-center p-5 sm:p-6">
             <div className="flex flex-col gap-0.5 w-full">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
                 Let&apos;s work together
@@ -136,24 +136,24 @@ export default function DashboardSection() {
             </div>
 
             {/* Monogram circle graphic */}
-            <div className="w-16 h-16 rounded-full bg-accent text-accent-contrast-text font-display text-xl font-bold flex items-center justify-center shadow-md select-none relative my-3 hover:scale-105 transition-transform duration-200">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-accent text-accent-contrast-text font-display text-lg sm:text-xl font-bold flex items-center justify-center shadow-md select-none relative my-3 hover:scale-105 transition-transform duration-200">
               {profile.shortName}
             </div>
 
             {/* Contact Email Button */}
             <a
               href={`mailto:${profile.email}`}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-bg-surface-raised border border-border-subtle hover:border-accent/40 rounded-md text-text-secondary hover:text-text-primary text-xs font-mono transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 min-h-[44px] bg-bg-surface-raised border border-border-subtle hover:border-accent/40 rounded-md text-text-secondary hover:text-text-primary text-xs font-mono transition-colors duration-150 outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <Mail className="h-3.5 w-3.5 text-accent shrink-0" />
-              <span>{profile.email}</span>
+              <span className="truncate">{profile.email}</span>
             </a>
           </Card>
         </div>
 
         {/* Card 3: Remote Location (Col Span 4) */}
-        <div className="lg:col-span-4 flex justify-center">
-          <Card className="bg-bg-surface/50 w-full lg:w-[403.74px] lg:h-[254.4px] flex flex-col justify-between overflow-hidden p-6 md:p-6 relative group">
+        <div className="col-span-1 md:col-span-1 lg:col-span-4 flex justify-center">
+          <Card className="bg-bg-surface/50 w-full h-full min-h-[240px] sm:min-h-[254px] flex flex-col justify-between overflow-hidden p-5 sm:p-6 relative group">
             <div className="flex flex-col gap-0.5 z-10">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
                 Remote
@@ -168,17 +168,17 @@ export default function DashboardSection() {
 
             {/* Interactive 3D Globe */}
             <div className="w-full flex-1 flex items-center justify-center pt-2 select-none">
-              <div className="w-[130px] h-[130px] flex items-center justify-center">
-                <Globe className="w-[130px] h-[130px]" />
+              <div className="w-[120px] h-[120px] sm:w-[130px] sm:h-[130px] flex items-center justify-center">
+                <Globe className="w-[120px] h-[120px] sm:w-[130px] sm:h-[130px]" />
               </div>
             </div>
           </Card>
         </div>
 
         {/* Card 1: Tech Enthusiast (Col Span 4, Row Span 2 vertically, placed on the right) */}
-        <div className="lg:col-span-4 lg:row-span-2 flex justify-center">
-          <Card className="bg-bg-surface/50 w-full lg:w-[403.73px] lg:h-[564px] flex flex-col justify-between relative overflow-hidden group">
-            <div className="flex flex-col gap-2 z-10">
+        <div className="col-span-1 md:col-span-2 lg:col-span-4 lg:row-span-2 flex justify-center">
+          <Card className="bg-bg-surface/50 w-full h-full min-h-[340px] sm:min-h-[380px] lg:min-h-[530px] flex flex-col justify-between relative overflow-hidden group p-5 sm:p-6">
+            <div className="flex flex-col gap-1.5 sm:gap-2 z-10">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold text-left">
                 Tech Enthusiast
               </span>
@@ -188,7 +188,7 @@ export default function DashboardSection() {
             </div>
 
             {/* Interactive floating skills cloud container */}
-            <div className="flex-1 w-full relative min-h-[380px] select-none mt-4">
+            <div className="flex-1 w-full relative min-h-[260px] sm:min-h-[300px] lg:min-h-[380px] select-none mt-3 sm:mt-4">
               {skillsList.map((skill, index) => (
                 <motion.span
                   key={index}
@@ -228,8 +228,8 @@ export default function DashboardSection() {
         </div>
 
         {/* Card 4: Behind the Scenes (Col Span 8 on the left) */}
-        <div className="lg:col-span-8 flex justify-center">
-          <Card className="bg-bg-surface/50 w-full lg:w-[825.06px] lg:h-[292px] flex flex-col gap-4 overflow-hidden justify-between p-6 md:p-6">
+        <div className="col-span-1 md:col-span-2 lg:col-span-8 flex justify-center">
+          <Card className="bg-bg-surface/50 w-full h-full min-h-[240px] sm:min-h-[270px] flex flex-col gap-4 overflow-hidden justify-between p-5 sm:p-6">
             <div className="flex flex-col gap-0.5">
               <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold text-left">
                 Behind the scenes
@@ -242,12 +242,12 @@ export default function DashboardSection() {
             {/* Process Steps scroll view */}
             <div
               ref={scrollRef}
-              className="flex gap-4 overflow-x-auto pb-2 scrollbar-none select-none"
+              className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 scrollbar-none select-none"
             >
               {duplicatedItems.map((item, index) => (
                 <div
                   key={index}
-                  className="min-w-[200px] flex-1 bg-bg-surface-raised/40 border border-border-subtle/50 rounded-lg p-4 flex flex-col gap-1.5 text-left"
+                  className="min-w-[180px] sm:min-w-[200px] flex-1 bg-bg-surface-raised/40 border border-border-subtle/50 rounded-lg p-3.5 sm:p-4 flex flex-col gap-1.5 text-left"
                 >
                   <span className="font-mono text-[10px] text-accent font-bold">
                     0{(index % behindTheScenesItems.length) + 1}

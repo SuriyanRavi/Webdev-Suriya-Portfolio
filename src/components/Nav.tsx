@@ -88,7 +88,7 @@ export default function Nav() {
     <>
       {/* Navbar Container */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 h-[72px] flex items-center justify-between px-6 md:px-12 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 h-[72px] flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 transition-all duration-300 ${
           scrolled
             ? "bg-bg-surface/80 border-b border-border-subtle backdrop-blur-md"
             : "bg-transparent border-b border-transparent"
@@ -98,7 +98,7 @@ export default function Nav() {
         <a
           href="#home"
           onClick={(e) => scrollToSection(e, "#home")}
-          className="font-mono text-xl md:text-2xl font-bold tracking-tight text-text-primary focus-visible:outline-2 focus-visible:outline-accent outline-offset-4"
+          className="font-mono text-xl md:text-2xl font-bold tracking-tight text-text-primary focus-visible:outline-2 focus-visible:outline-accent outline-offset-4 py-2"
           aria-label="SR Monogram Home"
         >
           SR<span className="text-accent">.</span>
@@ -135,7 +135,7 @@ export default function Nav() {
           {/* Theme Toggler */}
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-full border border-border-subtle hover:border-accent hover:text-accent text-text-secondary focus-visible:ring-2 focus-visible:ring-accent outline-none transition-all duration-150 cursor-pointer"
+            className="h-11 w-11 flex items-center justify-center rounded-full border border-border-subtle hover:border-accent hover:text-accent text-text-secondary focus-visible:ring-2 focus-visible:ring-accent outline-none transition-all duration-150 cursor-pointer"
             aria-label={`Toggle theme (currently ${theme})`}
           >
             {theme === "dark" ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
@@ -151,11 +151,11 @@ export default function Nav() {
         </div>
 
         {/* Mobile controls */}
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-2.5 lg:hidden">
           {/* Theme Toggler for Mobile */}
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-full border border-border-subtle text-text-secondary focus-visible:ring-2 focus-visible:ring-accent outline-none cursor-pointer"
+            className="h-11 w-11 flex items-center justify-center rounded-full border border-border-subtle text-text-secondary focus-visible:ring-2 focus-visible:ring-accent outline-none cursor-pointer"
             aria-label={`Toggle theme`}
           >
             {theme === "dark" ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
@@ -164,7 +164,7 @@ export default function Nav() {
           {/* Hamburger trigger */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="p-2.5 rounded-full text-text-primary border border-border-subtle hover:border-accent outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+            className="h-11 w-11 flex items-center justify-center rounded-full text-text-primary border border-border-subtle hover:border-accent outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
             aria-label="Open navigation menu"
           >
             <Menu className="h-5 w-5" />
@@ -191,7 +191,7 @@ export default function Nav() {
               <span className="font-mono text-xl font-bold text-text-primary">SR.</span>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2.5 rounded-full text-text-primary border border-border-subtle outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
+                className="h-11 w-11 flex items-center justify-center rounded-full text-text-primary border border-border-subtle outline-none focus-visible:ring-2 focus-visible:ring-accent cursor-pointer"
                 aria-label="Close menu"
               >
                 <X className="h-5 w-5" />
@@ -199,7 +199,7 @@ export default function Nav() {
             </div>
 
             {/* Menu Links */}
-            <nav className="flex-1 flex flex-col justify-center items-center gap-6">
+            <nav className="flex-1 flex flex-col justify-center items-center gap-3 sm:gap-4">
               {navLinks.map((link, idx) => (
                 <motion.a
                   key={link.href}
@@ -208,7 +208,7 @@ export default function Nav() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.04, duration: 0.25, ease: "easeOut" }}
-                  className="font-display text-2xl md:text-3xl font-semibold text-text-primary hover:text-accent transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-accent outline-offset-8"
+                  className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-text-primary hover:text-accent transition-colors duration-150 py-3 px-4 w-full text-center focus-visible:outline-2 focus-visible:outline-accent outline-offset-4"
                 >
                   {link.label}
                 </motion.a>
@@ -217,11 +217,11 @@ export default function Nav() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.04, duration: 0.25 }}
-                className="mt-6 w-full max-w-[200px]"
+                className="mt-6 w-full max-w-[240px]"
               >
                 <Button
                   variant="primary"
-                  className="w-full text-center"
+                  className="w-full text-center !py-3.5 min-h-[48px]"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     const target = document.querySelector("#contact");

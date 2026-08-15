@@ -91,31 +91,31 @@ export default function ServicesGrid() {
   };
 
   return (
-    <section id="services" className="max-w-[1280px] mx-auto px-6 md:px-12 py-24 border-b border-border-subtle overflow-hidden">
+    <section id="services" className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24 border-b border-border-subtle overflow-hidden">
       {/* Header with scroll animation */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mb-12 md:mb-16 text-center flex flex-col items-center justify-center"
+        className="mb-8 sm:mb-12 md:mb-16 text-center flex flex-col items-center justify-center"
       >
         <span className="font-mono text-[11px] tracking-[0.04em] uppercase text-accent font-semibold">
           Capabilities
         </span>
-        <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-text-primary mt-2">
+        <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-text-primary mt-2">
           What I <span className="text-accent">Provide</span>
         </h2>
       </motion.div>
 
-      {/* Horizontal Scroll Services container (with snap-align suspended during active drag to avoid locking) */}
+      {/* Horizontal Scroll Services container */}
       <div
         ref={scrollRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
-        className={`flex gap-6 overflow-x-auto py-6 -my-6 pb-8 scrollbar-none w-full select-none ${
+        className={`flex gap-4 sm:gap-6 overflow-x-auto py-4 sm:py-6 -my-4 sm:-my-6 pb-6 sm:pb-8 scrollbar-none w-full select-none ${
           isDragging ? "cursor-grabbing" : "cursor-grab snap-x snap-mandatory"
         }`}
       >
@@ -126,21 +126,21 @@ export default function ServicesGrid() {
             whileHover={{ scale: 1.03, zIndex: 10 }}
             transition={{ type: "spring", stiffness: 400, damping: 22 }}
             onClick={() => handleCardClick(service)}
-            className="snap-start shrink-0 w-[280px] sm:w-[320px] md:w-[340px] relative"
+            className="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[340px] relative"
           >
             <Card
               interactive={false} // Disable default card green hover outlines
-              className="flex flex-col justify-between h-[280px] bg-bg-surface/30 group hover:bg-bg-surface/60 cursor-pointer select-none"
+              className="flex flex-col justify-between h-[270px] sm:h-[280px] bg-bg-surface/30 group hover:bg-bg-surface/60 cursor-pointer select-none p-5 sm:p-6"
             >
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4 sm:gap-5">
                 {/* Icon Container */}
-                <div className="h-12 w-12 rounded-lg bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-2xl select-none transition-colors duration-200">
+                <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-lg bg-bg-surface-raised border border-border-subtle flex items-center justify-center text-xl sm:text-2xl select-none transition-colors duration-200">
                   {service.icon}
                 </div>
 
                 {/* Title & Description */}
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-display text-lg font-bold text-text-primary group-hover:text-white transition-colors duration-150">
+                <div className="flex flex-col gap-1.5 sm:gap-2">
+                  <h3 className="font-display text-base sm:text-lg font-bold text-text-primary group-hover:text-white transition-colors duration-150">
                     {service.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
@@ -150,7 +150,7 @@ export default function ServicesGrid() {
               </div>
 
               {/* Learn More link */}
-              <div className="mt-6 pt-4 border-t border-border-subtle/30 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-secondary group-hover:text-white transition-colors duration-150">
+              <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-border-subtle/30 flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-secondary group-hover:text-white transition-colors duration-150">
                 Learn More
                 <ArrowRight className="h-3.5 w-3.5 transform transition-transform duration-200 group-hover:translate-x-1" />
               </div>
@@ -178,54 +178,42 @@ export default function ServicesGrid() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="bg-[#131316] border border-[#2a2a2f] rounded-2xl w-full max-w-[500px] p-8 shadow-2xl relative z-10 text-left overflow-hidden"
+              className="bg-[#131316] border border-[#2a2a2f] rounded-2xl w-full max-w-[500px] p-6 sm:p-8 shadow-2xl relative z-10 text-left overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedService(null)}
-                className="absolute top-5 right-5 text-text-secondary hover:text-white transition-colors duration-150 cursor-pointer focus-visible:outline-none"
+                className="absolute top-4 right-4 sm:top-5 sm:right-5 w-11 h-11 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-text-secondary hover:text-white hover:bg-bg-surface transition-colors duration-150 cursor-pointer focus-visible:outline-none"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              {/* Icon: font-size 36px, bottom padding 16px */}
-              <div style={{ fontSize: "36px", paddingBottom: "16px" }} className="select-none leading-none">
+              {/* Icon */}
+              <div className="text-3xl sm:text-4xl pb-3 sm:pb-4 select-none leading-none">
                 {selectedService.icon}
               </div>
 
-              {/* Title: font-size 24px, bottom padding 16px */}
-              <h3
-                style={{ fontSize: "24px", paddingBottom: "16px" }}
-                className="font-display font-bold text-white leading-tight"
-              >
+              {/* Title */}
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-white leading-tight pb-3 sm:pb-4 pr-8">
                 {selectedService.title}
               </h3>
 
-              {/* Description: font-size 16px, bottom padding 24px */}
-              <p
-                style={{ fontSize: "16px", paddingBottom: "24px" }}
-                className="text-text-secondary leading-relaxed font-sans"
-              >
+              {/* Description */}
+              <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans pb-4 sm:pb-6">
                 {selectedService.description}
               </p>
 
               {/* Divider */}
-              <div className="w-full border-t border-[#2a2a2f] mb-6" />
+              <div className="w-full border-t border-[#2a2a2f] mb-4 sm:mb-6" />
 
-              {/* Details Header: font-size 18px */}
-              <h4
-                style={{ fontSize: "18px", paddingBottom: "12px" }}
-                className="font-display font-semibold text-white"
-              >
+              {/* Details Header */}
+              <h4 className="font-display text-base sm:text-lg font-semibold text-white pb-2 sm:pb-3">
                 Details
               </h4>
 
-              {/* Details Content: font-size 16px */}
-              <p
-                style={{ fontSize: "16px" }}
-                className="text-text-secondary leading-relaxed font-sans"
-              >
+              {/* Details Content */}
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-sans">
                 {selectedService.details}
               </p>
             </motion.div>
