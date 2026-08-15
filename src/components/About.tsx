@@ -19,8 +19,6 @@ const skills = [
   "Vercel",
   "NPM",
   "Figma",
-  "Responsive Design",
-  "Web Accessibility (a11y)",
 ];
 
 const getTechIconPath = (techName: string): string => {
