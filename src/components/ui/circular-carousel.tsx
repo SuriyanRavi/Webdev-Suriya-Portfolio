@@ -24,10 +24,8 @@ export interface CircularCarouselProps {
 }
 
 const VISIBLE_COUNT = 5;
-const RADIUS_X = 220;
-const RADIUS_Y = 100;
 
-function getItemPosition(index: number, activeIndex: number, total: number) {
+function getItemPosition(index: number, activeIndex: number, total: number, radiusX: number = 220, radiusY: number = 100) {
   const offset = index - activeIndex;
   const half = Math.floor(VISIBLE_COUNT / 2);
   let adjustedOffset = offset;
@@ -38,8 +36,8 @@ function getItemPosition(index: number, activeIndex: number, total: number) {
   if (Math.abs(adjustedOffset) > half * 2) return null;
 
   const angle = (adjustedOffset / VISIBLE_COUNT) * Math.PI;
-  const x = Math.sin(angle) * RADIUS_X;
-  const y = -Math.cos(angle) * RADIUS_Y;
+  const x = Math.sin(angle) * radiusX;
+  const y = -Math.cos(angle) * radiusY;
 
   const distance = Math.abs(adjustedOffset);
   const maxDistance = half + 1;
@@ -62,11 +60,28 @@ export function CircularCarousel({
   const [internalIndex, setInternalIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
+  const [radius, setRadius] = useState({ x: 220, y: 100 });
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const activeIndex = controlledIndex ?? internalIndex;
   const total = items.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      const w = window.innerWidth;
+      if (w < 480) {
+        setRadius({ x: 120, y: 55 });
+      } else if (w < 768) {
+        setRadius({ x: 160, y: 75 });
+      } else {
+        setRadius({ x: 220, y: 100 });
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const goTo = useCallback(
     (index: number) => {
@@ -114,15 +129,15 @@ export function CircularCarousel({
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       className={cn(
-        "relative flex flex-col items-center justify-center gap-8 outline-none w-full",
+        "relative flex flex-col items-center justify-center gap-6 sm:gap-8 outline-none w-full max-w-full overflow-hidden py-4",
         className,
       )}
     >
       {/* Circular track */}
-      <div className="relative h-[280px] w-full max-w-lg">
+      <div className="relative h-[240px] sm:h-[280px] w-full max-w-lg">
         <AnimatePresence mode="popLayout">
           {items.map((item, i) => {
-            const pos = getItemPosition(i, activeIndex, total);
+            const pos = getItemPosition(i, activeIndex, total, radius.x, radius.y);
             if (!pos) return null;
 
             const isActive = i === activeIndex;
@@ -152,7 +167,7 @@ export function CircularCarousel({
                 aria-selected={isActive}
                 role="option"
                 className={cn(
-                  "absolute left-1/2 top-1/2 flex h-32 w-48 -translate-x-1/2 -translate-y-1/2 cursor-pointer flex-col items-start justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-zinc-800/90 to-zinc-900/90 p-4 backdrop-blur-sm transition-shadow duration-300",
+                  "absolute left-1/2 top-1/2 flex h-28 w-40 sm:h-32 sm:w-48 -translate-x-1/2 -translate-y-1/2 cursor-pointer flex-col items-start justify-between rounded-2xl border border-white/10 bg-gradient-to-b from-zinc-800/90 to-zinc-900/90 p-3 sm:p-4 backdrop-blur-sm transition-shadow duration-300",
                   isActive
                     ? "shadow-[0_20px_60px_-12px_rgba(0,0,0,0.5)] border-accent/40"
                     : "shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_32px_-4px_rgba(0,0,0,0.4)]",

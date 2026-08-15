@@ -101,17 +101,14 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24"
+      className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-24 overflow-hidden"
     >
       {/* 2-Column Responsive Layout */}
-      <div className="flex flex-col lg:flex-row items-stretch lg:items-start justify-center gap-8 sm:gap-12 lg:gap-12 w-full">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 sm:gap-12 lg:gap-12 w-full max-w-full">
         
         {/* Left Column: Let's Connect (Outer Card Wrapper) */}
-        <div
-          style={{ width: "329.33px", height: "524.8px" }}
-          className="max-w-full flex justify-center shrink-0"
-        >
-          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 flex flex-col justify-between text-left shrink-0">
+        <div className="w-full max-w-full lg:w-[329.33px] lg:h-[524.8px] flex justify-center shrink-0">
+          <Card className="w-full h-full min-h-[460px] lg:h-[524.8px] bg-[#131316]/50 border border-border-subtle p-5 sm:p-6 flex flex-col justify-between text-left shrink-0">
             <div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-accent">
                 Let&apos;s Connect
@@ -204,11 +201,8 @@ export default function ContactForm() {
         </div>
 
         {/* Right Column: Send a Message Form */}
-        <div
-          style={{ width: "648.68px", height: "524.8px" }}
-          className="max-w-full shrink-0"
-        >
-          <Card className="w-full h-full bg-[#131316]/50 border border-border-subtle p-6 sm:p-7 flex flex-col justify-between">
+        <div className="w-full max-w-full lg:w-[648.68px] lg:h-[524.8px] shrink-0">
+          <Card className="w-full h-full min-h-[460px] lg:h-[524.8px] bg-[#131316]/50 border border-border-subtle p-5 sm:p-7 flex flex-col justify-between">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-accent text-left mb-2">
               Send a Message
             </h3>

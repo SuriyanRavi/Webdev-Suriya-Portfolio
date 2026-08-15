@@ -79,7 +79,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="flex flex-col gap-3.5 sm:gap-4 text-text-secondary text-sm sm:text-base leading-relaxed font-sans">
+          <div className="flex flex-col gap-3.5 sm:gap-4 text-text-secondary text-base leading-relaxed font-sans">
             <p>
               I&apos;m {profile.fullName}, a passionate frontend developer based in India, dedicated to building impactful and user-friendly web interfaces. I specialize in React, Next.js, and modern frontend technologies, focusing on writing clean, semantic, and highly interactive code.
             </p>
