@@ -47,175 +47,181 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content Directory */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 flex flex-col lg:flex-row justify-between gap-10 lg:gap-12">
         
-        {/* Col 1: Identity & Trustpilot */}
-        <div className="md:col-span-4 flex flex-col gap-3 sm:gap-4 items-start text-left">
-          <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
-            {profile.fullName}
-          </span>
-          <p className="text-text-secondary text-xs sm:text-sm max-w-[320px] font-sans leading-relaxed">
-            Building web solutions where clean design and powerful functionality work in harmony.
-          </p>
-          
-          {/* Social Row */}
-          <div className="flex items-center gap-2 sm:gap-3 mt-1">
-            <a
-              href={profile.linkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
-              aria-label="LinkedIn"
-            >
-              <LinkedinIcon className="h-5 w-5" />
-            </a>
-            <a
-              href={profile.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
-              aria-label="GitHub"
-            >
-              <GithubIcon className="h-5 w-5" />
-            </a>
-            <a
-              href="https://wa.me/917604889657"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
-              aria-label="WhatsApp"
-            >
-              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.747 1.451 5.436.002 9.858-4.395 9.861-9.81.002-2.624-1.02-5.09-2.885-6.958-1.864-1.867-4.343-2.894-6.969-2.895-5.437 0-9.86 4.397-9.863 9.814-.001 1.716.452 3.39 1.309 4.866L1.87 21.03l4.777-1.249zm11.238-6.903c-.29-.145-1.72-.848-1.986-.944-.266-.096-.46-.145-.653.145-.193.29-.748.944-.917 1.138-.17.194-.339.218-.63.073-.29-.145-1.223-.45-2.33-1.439-.86-.767-1.442-1.716-1.611-2.007-.17-.29-.018-.447.127-.591.13-.13.29-.339.435-.508.145-.17.193-.29.29-.484.097-.193.048-.363-.024-.508-.073-.145-.653-1.573-.895-2.153-.235-.564-.476-.488-.653-.497-.169-.008-.363-.01-.557-.01-.193 0-.508.073-.774.363-.266.29-1.016.992-1.016 2.42 0 1.427 1.04 2.806 1.185 3.001.145.193 2.046 3.125 4.957 4.38.692.298 1.233.477 1.654.61.695.22 1.33.19 1.83.115.558-.084 1.72-.702 1.962-1.38.242-.678.242-1.258.17-1.38-.073-.122-.266-.194-.556-.339z" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Trustpilot Badge */}
-          <div className="mt-3 sm:mt-4 flex self-start">
-            <a
-              href="https://www.trustpilot.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3.5 py-1.5 min-h-[40px] bg-white border border-[#00b67a] rounded-[4px] text-black font-sans font-bold text-[11px] transition-colors duration-150 select-none shadow-sm"
-            >
-              <span className="text-[#191919]">Review us on</span>
-              <span className="flex items-center gap-0.5 text-[#00b67a]">
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        {/* Left Area: Identity, Bio, Socials, Trustpilot, Direct Contacts */}
+        <div className="flex flex-col gap-8 max-w-xl text-left">
+          {/* Identity & Bio */}
+          <div className="flex flex-col gap-3 sm:gap-4 items-start">
+            <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight">
+              {profile.fullName}
+            </span>
+            <p className="text-text-secondary text-xs sm:text-sm max-w-[420px] font-sans leading-relaxed">
+              Building web solutions where clean design and powerful functionality work in harmony.
+            </p>
+            
+            {/* Social Row */}
+            <div className="flex items-center gap-2 sm:gap-3 mt-1">
+              <a
+                href={profile.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={profile.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
+                aria-label="GitHub"
+              >
+                <GithubIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://wa.me/917604889657"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-text-secondary hover:text-accent hover:bg-bg-surface transition-colors duration-150"
+                aria-label="WhatsApp"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.747 1.451 5.436.002 9.858-4.395 9.861-9.81.002-2.624-1.02-5.09-2.885-6.958-1.864-1.867-4.343-2.894-6.969-2.895-5.437 0-9.86 4.397-9.863 9.814-.001 1.716.452 3.39 1.309 4.866L1.87 21.03l4.777-1.249zm11.238-6.903c-.29-.145-1.72-.848-1.986-.944-.266-.096-.46-.145-.653.145-.193.29-.748.944-.917 1.138-.17.194-.339.218-.63.073-.29-.145-1.223-.45-2.33-1.439-.86-.767-1.442-1.716-1.611-2.007-.17-.29-.018-.447.127-.591.13-.13.29-.339.435-.508.145-.17.193-.29.29-.484.097-.193.048-.363-.024-.508-.073-.145-.653-1.573-.895-2.153-.235-.564-.476-.488-.653-.497-.169-.008-.363-.01-.557-.01-.193 0-.508.073-.774.363-.266.29-1.016.992-1.016 2.42 0 1.427 1.04 2.806 1.185 3.001.145.193 2.046 3.125 4.957 4.38.692.298 1.233.477 1.654.61.695.22 1.33.19 1.83.115.558-.084 1.72-.702 1.962-1.38.242-.678.242-1.258.17-1.38-.073-.122-.266-.194-.556-.339z" />
                 </svg>
-                Trustpilot
-              </span>
-            </a>
+              </a>
+            </div>
+
+            {/* Trustpilot Badge */}
+            <div className="mt-2 flex self-start">
+              <a
+                href="https://www.trustpilot.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-1.5 min-h-[40px] bg-white border border-[#00b67a] rounded-[4px] text-black font-sans font-bold text-[11px] transition-colors duration-150 select-none shadow-sm"
+              >
+                <span className="text-[#191919]">Review us on</span>
+                <span className="flex items-center gap-0.5 text-[#00b67a]">
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                  Trustpilot
+                </span>
+              </a>
+            </div>
+          </div>
+
+          {/* Bio / Call to action */}
+          <div className="flex flex-col gap-3 items-start text-left">
+            <p className="text-text-secondary text-xs sm:text-sm leading-relaxed font-sans max-w-[420px]">
+              I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
+            </p>
+            
+            {/* Direct contacts */}
+            <div className="flex flex-col gap-2 mt-1 w-full">
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-2 text-[#00a8ff] hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
+              >
+                <Mail className="h-4 w-4 shrink-0" />
+                <span className="truncate">{profile.email}</span>
+              </a>
+              <a
+                href="tel:+917604889657"
+                className="inline-flex items-center gap-2 text-text-secondary hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
+              >
+                <Phone className="h-4 w-4 shrink-0" />
+                <span>+91 7604889657</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Col 2: The Website Sitemap */}
-        <div className="md:col-span-2 flex flex-col gap-3 sm:gap-4 items-start text-left">
-          <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
-            The Website
-          </h4>
-          <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
-            <li>
-              <a
-                href="#home"
-                onClick={(e) => scrollToSection(e, "#home")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#work"
-                onClick={(e) => scrollToSection(e, "#work")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                onClick={(e) => scrollToSection(e, "#about")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, "#contact")}
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Right Area: 2-Column Links Layout ("THE WEBSITE" & "PROJECTS" side-by-side on Mobile, Tab, and Desktop) */}
+        <div className="grid grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start text-left w-full lg:w-auto shrink-0">
+          {/* Col 1: The Website Sitemap */}
+          <div className="flex flex-col gap-3 sm:gap-4 items-start text-left">
+            <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+              The Website
+            </h4>
+            <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#home"
+                  onClick={(e) => scrollToSection(e, "#home")}
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#work"
+                  onClick={(e) => scrollToSection(e, "#work")}
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  onClick={(e) => scrollToSection(e, "#about")}
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => scrollToSection(e, "#contact")}
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Col 3: Projects list */}
-        <div className="md:col-span-2 flex flex-col gap-3 sm:gap-4 items-start text-left">
-          <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
-            Projects
-          </h4>
-          <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
-            <li>
-              <a
-                href="https://personal-tracker-app-delta.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Personal-Tracker-App
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://aznav-technologies-software.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Aznav Technologies
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://shanthi-contruction.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block"
-              >
-                Shanthi Construction
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Col 4: Bio / Call to action */}
-        <div className="md:col-span-4 flex flex-col gap-3 sm:gap-4 items-start text-left">
-          <p className="text-text-secondary text-xs sm:text-sm leading-relaxed font-sans">
-            I&apos;m open to freelance projects, full-time roles, or collaborative ideas. Connect and build something meaningful together.
-          </p>
-          
-          {/* Direct contacts */}
-          <div className="flex flex-col gap-2 mt-1 w-full">
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 text-[#00a8ff] hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
-            >
-              <Mail className="h-4 w-4 shrink-0" />
-              <span className="truncate">{profile.email}</span>
-            </a>
-            <a
-              href="tel:+917604889657"
-              className="inline-flex items-center gap-2 text-text-secondary hover:text-accent transition-colors duration-150 font-mono text-xs sm:text-sm py-1.5"
-            >
-              <Phone className="h-4 w-4 shrink-0" />
-              <span>+91 7604889657</span>
-            </a>
+          {/* Col 2: Projects list */}
+          <div className="flex flex-col gap-3 sm:gap-4 items-start text-left">
+            <h4 className="font-display text-sm sm:text-base font-bold text-white uppercase tracking-wider">
+              Projects
+            </h4>
+            <ul className="flex flex-col gap-2 sm:gap-2.5 font-sans text-xs sm:text-sm">
+              <li>
+                <a
+                  href="https://personal-tracker-app-delta.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block break-words"
+                >
+                  Personal-Tracker-App
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://aznav-technologies-software.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block break-words"
+                >
+                  Aznav Technologies
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://shanthi-contruction.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-accent transition-colors duration-150 py-1 inline-block break-words"
+                >
+                  Shanthi Construction
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
