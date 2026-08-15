@@ -57,12 +57,12 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Headline (fluid font, tight line-height, bold) */}
+          {/* Headline (Design: balanced phrases without awkward single-word wrapping) */}
           <motion.h1
             variants={fadeInUp}
-            className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[80px] xl:text-[84px] font-bold leading-[1.08] sm:leading-[1.04] md:leading-[1.02] tracking-tight text-text-primary text-center px-2"
+            className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-[76px] xl:text-[82px] font-bold leading-[1.12] sm:leading-[1.08] md:leading-[1.04] tracking-tight text-text-primary text-center max-w-[960px] mx-auto px-2"
           >
-            Turning thoughts into{" "}
+            <span className="inline-block">Turning thoughts into</span>{" "}
             <span className="text-accent relative inline-block">
               beautiful web stories
             </span>
