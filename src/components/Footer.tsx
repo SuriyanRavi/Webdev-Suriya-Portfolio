@@ -12,6 +12,14 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="w-full bg-bg-canvas border-t border-border-subtle overflow-hidden shrink-0 mt-auto">
       
@@ -113,22 +121,38 @@ export default function Footer() {
           {/* Points: 16px */}
           <ul style={{ fontSize: "16px" }} className="flex flex-col gap-2.5 font-sans">
             <li>
-              <a href="#home" className="text-text-secondary hover:text-accent transition-colors duration-150">
+              <a
+                href="#home"
+                onClick={(e) => scrollToSection(e, "#home")}
+                className="text-text-secondary hover:text-accent transition-colors duration-150"
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="#work" className="text-text-secondary hover:text-accent transition-colors duration-150">
+              <a
+                href="#work"
+                onClick={(e) => scrollToSection(e, "#work")}
+                className="text-text-secondary hover:text-accent transition-colors duration-150"
+              >
                 Projects
               </a>
             </li>
             <li>
-              <a href="#about" className="text-text-secondary hover:text-accent transition-colors duration-150">
+              <a
+                href="#about"
+                onClick={(e) => scrollToSection(e, "#about")}
+                className="text-text-secondary hover:text-accent transition-colors duration-150"
+              >
                 About
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-text-secondary hover:text-accent transition-colors duration-150">
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, "#contact")}
+                className="text-text-secondary hover:text-accent transition-colors duration-150"
+              >
                 Contact
               </a>
             </li>

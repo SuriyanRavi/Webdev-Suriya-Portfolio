@@ -81,7 +81,6 @@ export default function Nav() {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
       setActiveSection(href);
-      window.history.pushState(null, "", href);
     }
   };
 
